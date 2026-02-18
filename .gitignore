@@ -1,0 +1,26 @@
+# Virtual Environment
+projectenv/
+venv/
+env/
+ENV/
+
+# Python Bytecode
+__pycache__/
+*.pyc[cod]
+*$py.class
+
+# Django Specific
+db.sqlite3
+local_settings.py
+media/
+*.log
+
+# Environment Variables
+.env
+
+# IDE Specific
+.vscode/
+
+# Migrations (optional, many teems keep them)
+# */migrations/*
+# !*/migrations/__init__.py
