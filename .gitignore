@@ -16,11 +16,18 @@ local_settings.py
 media/
 *.log
 
+
 # Environment Variables
 .env
 
 # IDE Specific
 .vscode/
+.idea/
+*.swp
+*.swo
+*~
+.DS_Store
+Thumbs.db
 
 # Migrations (optional, many teems keep them)
 # */migrations/*
