@@ -1,5 +1,6 @@
 # Virtual Environment
 projectenv/
+broenv/
 venv/
 env/
 ENV/
