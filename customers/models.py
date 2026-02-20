@@ -1,5 +1,5 @@
 from django.db import models
-from django.contrib.auth import User
+from django.contrib.auth.models import User
 
 # Model for customers add,update,login,logout and signup
 class Customers(models.Model):
