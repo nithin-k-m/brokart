@@ -15,8 +15,15 @@ Including another URLconf
     2. Add a URL to urlpatterns:  path('blog/', include('blog.urls'))
 """
 from django.contrib import admin
-from django.urls import path
+from django.urls import path,include
+from django.conf.urls.static import static
+from django.conf import settings
+
 
 urlpatterns = [
-    path('admin/', admin.site.urls),
+    path('admin/', admin.site.urls),#route to admin site
+    path('',include('products.urls'))#including the urls of products app, when the user accesses the root URL of the application then it will look for the urls in products app and route accordingly
+
 ]
+
+urlpatterns += static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)#to serve media files through django server in debug mode, this line will only work if DEBUG is True in settings.py

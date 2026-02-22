@@ -10,6 +10,7 @@ For the full list of settings and their values, see
 https://docs.djangoproject.com/en/6.0/ref/settings/
 """
 
+import os
 from pathlib import Path
 
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
@@ -58,7 +59,7 @@ ROOT_URLCONF = 'brokart.urls'
 TEMPLATES = [
     {
         'BACKEND': 'django.template.backends.django.DjangoTemplates',
-        'DIRS': [],
+        'DIRS': ['templates'],
         'APP_DIRS': True,
         'OPTIONS': {
             'context_processors': [
@@ -118,4 +119,35 @@ USE_TZ = True
 # Static files (CSS, JavaScript, Images)
 # https://docs.djangoproject.com/en/6.0/howto/static-files/
 
-STATIC_URL = 'static/'
+STATIC_URL = 'cart_files/' # to tell django where to look for static files like css and js files, we are creating a folder named cart_files in the project directory and adding its path here
+STATICFILES_DIRS = [
+    BASE_DIR / 'static'
+    ] # to tell django where to look for static files like css and js files, we are creating a folder named static in the project directory and adding its path here
+
+# Default primary key field type
+# https://docs.djangoproject.com/en/6.0/ref/settings/#default-auto-field
+
+MEDIA_URL = '/media/' # to tell django where to look for media files like images, we are creating a folder named media in the project directory and adding its path here
+MEDIA_ROOT =os.path.join(BASE_DIR / 'media') # to tell django where to store media files like images, we are creating a folder named media in the project directory and adding its path here
+DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField' # to set the default primary key field type to BigAutoField which will automatically create a primary key
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
