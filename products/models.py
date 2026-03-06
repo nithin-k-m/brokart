@@ -1,6 +1,6 @@
 from django.db import models
 
-# Model for products add,update,delete and view
+# Model for products
 class Product(models.Model):
     LIVE =1
     DELETE =0
@@ -8,7 +8,7 @@ class Product(models.Model):
     title=models.CharField(max_length=200)
     price=models.FloatField(max_length=100)
     description=models.TextField()
-    image=models.ImageField(upload_to='products/')
+    image=models.ImageField(upload_to='products/')# to add images in the model, upload_to is the folder inside media folder where images will be stored, null=True means its optional to add an image, blank=True means its optional in forms too
     priority=models.IntegerField(default=0)# to set the default priority of the product to 0, we can use this field to sort the products based on their priority in the views and templates
     delete_status=models.IntegerField(choices=DELETE_CHOICES,default=LIVE)# to set the default delete status of the product to LIVE, we can use this field to filter the products based on their delete status in the views and templates
     createtd_at=models.DateTimeField(auto_now_add=True)# to set the created_at field to the current date and time when the product is created, we can use this field to sort the products based on their creation date in the views and templates

@@ -1,5 +1,5 @@
 from django.db import models
-from django.contrib.auth.models import User
+from django.contrib.auth.models import User# to import the User model from django.contrib.auth.models, we can use this User model to create a new user account for the user and log them in to the application, we can also use this User model to authenticate the user when they try to log in to the application
 
 # Model for customers add,update,login,logout and signup
 class Customers(models.Model):

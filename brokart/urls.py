@@ -22,8 +22,9 @@ from django.conf import settings
 
 urlpatterns = [
     path('admin/', admin.site.urls),#route to admin site
-    path('',include('products.urls'))#including the urls of products app, when the user accesses the root URL of the application then it will look for the urls in products app and route accordingly
-
+    path('',include('products.urls')),#including the urls of products app, when the user accesses the root URL of the application then it will look for the urls in products app and route accordingly
+    path('customer/',include('customers.urls')),#including the urls of customers app, when the user accesses the root URL of the application then it will look for the urls in customers app and route accordingly
+    path('order/',include('orders.urls')),#including the urls of orders app, when the user accesses the root URL of the application then it will look for the urls in orders app and route accordingly
 ]
 
 urlpatterns += static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)#to serve media files through django server in debug mode, this line will only work if DEBUG is True in settings.py
