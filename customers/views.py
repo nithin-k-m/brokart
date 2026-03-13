@@ -25,7 +25,8 @@ def show_account(request):# view function for handling the account page of the a
             phone=request.POST.get('phone')# getting the value of phone number parameter from the POST request, we can use this phone variable to create a new user account for the user and log them in to the application
         
             #creates user account 
-            user = User.objects.create_user(username=username,
+            user = User.objects.create_user(name =username,
+                                            username=username,
                                             password=password,
                                             email=email)# creating a new user account for the user using the create_user() method of User model and passing the values of username, password and email parameters that we have got from the POST request, we can use this user variable to log the user in to the application
         

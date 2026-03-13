@@ -16,5 +16,5 @@ class Customers(models.Model):
     #auto_now_add is used to set the field to the current date and time when the object is created and auto_now is used to set the field to the current date and time when the object is updated
 
     def __str__(self) -> str:# to return the name of the customer when we print the customer object in the console or when we see the customer object in the admin panel, it will show the name of the customer instead of Customers object
-        return self.name # it will show the name of the customer in admin panel instead of Customers object
+        return self.user.username # it will show the username of the customer in admin panel instead of Customers object
 

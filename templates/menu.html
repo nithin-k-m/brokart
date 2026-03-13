@@ -9,9 +9,12 @@
                         <li><a href="{% url 'home' %}">Home</a></li>
                         <li><a href="{% url 'list_product' %}">Products</a></li>
 
-                       
+                       {% if user.is_authenticated %}
                         <li><a href="{% url 'account' %}">Account</a></li>
-                        
+                        <li><a href="{% url 'orders' %}">Orders</a></li>
+                        {% else %}
+                        <li><a href="{% url 'account' %}">Login/Register</a></li>
+                        {% endif %}
                     </ul>
                 </nav>
                 {% if user.is_authenticated %}
